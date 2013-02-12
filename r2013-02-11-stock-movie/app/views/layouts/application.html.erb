@@ -7,9 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <ul class='nav'>
+      <li><a href='/home'>HOME</a></li>
+      <li><a href='/about'>ABOUT</a></li>
+      <li><a href='/faq'>FAQ</a></li>
+      <li><a href='/stock/stockhome'>STOCKS</a></li>
+      <li><a href='/movie/moviehome'>MOVIES</a></li>
+    </ul>
+  </header
 
-<%= yield %>
+  <div class = "content">
+  <%= yield %>
+  </div>
 
-<br><button><a href="/home" style="text-decoration: none;">Return HOME</a></button>
 </body>
 </html>

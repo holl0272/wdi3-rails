@@ -1,0 +1,93 @@
+
+@import url(http://fonts.googleapis.com/css?family=Margarine);
+@import url(http://fonts.googleapis.com/css?family=Diplomata+SC);
+
+body {
+  background-image: url('/assets/egg_shell.png');
+  font-family: 'Margarine', cursive;
+  color: #003056;
+}
+
+h1, h2, p {
+  color: #04518C;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+span {
+  color: #00A1D9;
+
+}
+
+p {
+  font-size: 20px;
+}
+
+header {
+  width:100%;
+  font-family: 'Diplomata SC', cursive;
+}
+
+header .nav{
+  list-style:none;
+  margin:0;
+  padding:0;
+  text-align:center;
+}
+header .nav li{
+  display:inline;
+}
+
+header .nav a{
+  color: #003056;
+  display:inline-block;
+  padding: 18px;
+  text-decoration: none;
+  font-size: 32px;
+  margin-top: -10px;
+}
+
+header .nav a:hover {
+  color: #04518C;
+}
+
+#wallstreet {
+    /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 10%;
+  left: 0;
+  z-index: -1;
+}
+
+#sign {
+  float: right;
+  margin-top: 5%;
+  margin-right: 4%;
+}
+
+#poster {
+  margin-top: 15px;
+  margin-left: 40px;
+}
+
+#movielist {
+  color: #04518C;
+  font-size: 30px;
+  list-style: none;
+  display: inline-block;
+}
+
+#plot {
+  margin-top: -10px;
+}
+form {
+  margin-left: 40px
+}
