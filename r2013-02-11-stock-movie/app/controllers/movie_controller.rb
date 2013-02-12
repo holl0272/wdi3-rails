@@ -3,7 +3,6 @@ class MovieController < ApplicationController
   end
 
   def film
-    if params[:title].present?
       name = params[:title].gsub(' ', '+')
       url = "http://www.omdbapi.com/?t=#{name}"
       html = HTTParty.get(url)
@@ -11,4 +10,3 @@ class MovieController < ApplicationController
     end
   end
 
-end
