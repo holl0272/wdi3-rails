@@ -1,0 +1,6 @@
+<% @mountains.each do |mountain| %>
+  <%= link_to(mountain.name, mountain_path(mountain.id)) %> has been ascended <%= mountain.ascents %> times. &nbsp&nbsp<%= link_to('Edit', mountain_edit_path(mountain.id)) %>
+  <%= button_to('Delete Mt', mountain_delete_path(mountain.id)) %>
+  <br>
+<% end %>
+

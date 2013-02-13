@@ -1,0 +1,16 @@
+<!-- <h1>Planet Index</h1>
+<%# @planets.each do |planet| %>
+  <ul><h2 style="margin-bottom: 0px;"><%#= planet.name %></h2>
+    <li style="list-style: none;"><strong>Orbit:</strong>&nbsp&nbsp<%#= planet.orbit %></li>
+    <li style="list-style: none;"><strong>Moons:</strong>&nbsp&nbsp<%#= planet.moons %></li>
+  </ul>
+<%# end %> -->
+
+<% @planets.each do |planet| %>
+<%= link_to(planet.name, planet_path(planet.id)) %> has <%= pluralize(planet.moons, 'moon') %>.
+<%= button_to 'Delete', planet_delete_path(planet.id) %>
+<%= link_to 'Edit', planet_edit_path(planet.id) %>
+<br>
+<br>
+<br>
+<% end %>
