@@ -1,1 +1,9 @@
-<%= image_tag(@mountain.image) %>
+<%= @mountain.name %><br>
+<%= image_tag(@mountain.image) %><br>
+<ul>
+  <li>Height:&nbsp&nbsp<%= number_with_delimiter(@mountain.height, :delimiter => ",") %> ft.</li>
+  <li>Range:&nbsp&nbsp<%= @mountain.range %></li>
+  <li>Parent Mountain:&nbsp&nbsp<%= @mountain.parent %></li>
+  <li>Number of Ascents:&nbsp&nbsp<%= @mountain.ascents %></li>
+</ul>
+
