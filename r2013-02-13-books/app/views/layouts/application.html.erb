@@ -7,12 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
   <ul>
     <li><%= link_to('Authors', authors_path) %></li>
     <li><%= link_to('Books', books_path) %></li>
     <li><%= link_to('New Author', new_author_path) %></li>
     <li><%= link_to('New Book', new_book_path) %></li>
   </ul>
+</nav>
 
   <%= yield %>
 

@@ -1,4 +1,20 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:700,400);
+
 * {
-  margin: 0px;
-  padding: 0px;
+  list-style: none;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+nav li {
+  display: inline;
+  padding: 0 10px 0 10px;
+}
+
+nav li a {
+  font-size: 24px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  color: magenta;
 }

@@ -1,0 +1,12 @@
+<button class="btn btn-primary" type="button"><%= link_to('New Recipe', new_recipe_path) %></button>
+
+<% @recipes.each do |recipe| %>
+<ul>
+  <li><h1><%= link_to(recipe.name, recipe) %></h1></li>
+  <li><%= image_tag(recipe.image) %></li>
+  <li><%= recipe.course %></li>
+  <li><%= recipe.cooktime %></li>
+  <li><%= recipe.servingsize %></li>
+  <li><%= recipe.instructions %></li>
+</ul>
+<% end %>

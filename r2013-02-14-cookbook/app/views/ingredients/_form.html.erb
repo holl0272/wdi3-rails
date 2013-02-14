@@ -1,0 +1,21 @@
+<%= form_for @ingredient do |f| %>
+
+<%#= f.label :recipe_id, "Select :  " %>
+<%#= f.select :recipe_id, Recipe.all.map{|recipe| [recipe.name, recipe.id]}, :include_blank => true, :prompt => "Recipe's Name" %>
+
+<br>
+<%= f.text_field :name, :autofocus => true %>
+<%= f.label :name, "Name" %>
+<br>
+<%= f.text_field :measurment %>
+<%= f.label :measurment, "Measurment" %>
+<br>
+<%= f.text_field :cost %>
+<%= f.label :cost, "Cost" %>
+<br>
+<%= f.text_field :image %>
+<%= f.label :image, "Image URL" %>
+<br>
+<%= f.submit :class => 'btn btn-success'  %>
+<% end %>
+

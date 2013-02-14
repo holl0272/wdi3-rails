@@ -1,0 +1,10 @@
+<button class="btn btn-primary" type="button"><%= link_to('New Ingredient', new_ingredient_path) %></button>
+
+  <% @ingredients.each do |ingredient| %>
+    <ul>
+      <li><h1><%= link_to(ingredient.name, ingredient) %></h1></li>
+      <li><%= image_tag(ingredient.image) %></li>
+      <li><%= ingredient.measurment %></li>
+      <li><%= ingredient.cost %></li>
+    </ul>
+  <% end %>

@@ -1,0 +1,12 @@
+<button class="btn btn-primary" type="button"><%= link_to('New Book', new_book_path) %></button>
+
+  <% @books.each do |book| %>
+    <ul>
+      <li><h1><%= link_to(book.title, book) %></h1></li>
+      <li><%= image_tag(book.image) %></li>
+      <li>Chef:  <%= book.chef %></li>
+      <li>Cuisine:  <%= book.cuisine %></li>
+    </ul>
+  <% end %>
+
+
