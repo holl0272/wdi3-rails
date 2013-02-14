@@ -1,0 +1,12 @@
+<ul>
+  <br>
+  <li><%= image_tag(@book.image) %></li>
+  <li>Title:&nbsp&nbsp<%= @book.title %></li>
+  <li>Release Date:&nbsp&nbsp<%= @book.release.strftime('%B %d, %Y') %></li>
+  <li>ISBN:&nbsp&nbsp<%= @book.isbn %></li><br>
+  <li>Description:<br><%= @book.description %></li>
+  <br>
+  <%= link_to 'edit', edit_book_path(@book) %>
+  <%= link_to "delete", @book, :method => :delete, :confirm => 'Are you sure you want to DELETE this BOOK?' %>
+</ul>
+

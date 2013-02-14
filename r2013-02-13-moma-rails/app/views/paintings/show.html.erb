@@ -1,0 +1,10 @@
+<div class="show"<br>
+<ul>
+  <h2><%= @painting.title %></h2><br>
+  <div id='painting'><%= image_tag(@painting.image) %></div>
+  <li>Year:&nbsp&nbsp<%= @painting.year %></li>
+  <li>Medium:&nbsp&nbsp<%= @painting.medium %></li>
+  <li>Style:&nbsp&nbsp<%= @painting.style %></li>
+</ul>
+<%= link_to 'Delete', @painting, :method => :delete, :confirm => 'Are you sure you want to delete this painting?'%>
+</div>

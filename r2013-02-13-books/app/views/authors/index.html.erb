@@ -1,0 +1,10 @@
+<% @authors.each do |author| %>
+<br>
+<ul>
+  <li><%= link_to author.name, author %></li>
+  <li><%= image_tag(author.image) %></li>
+  <!-- <li>DOB:&nbsp&nbsp<%#= author.dob.strftime('%B %d, %Y') %></li>
+  <li>Birthplace:&nbsp&nbsp<%#= author.birthplace %></li>
+  <li>Genre:&nbsp&nbsp<%#= author.genre %></li> -->
+</ul>
+<% end %>

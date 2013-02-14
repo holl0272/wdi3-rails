@@ -1,0 +1,11 @@
+<% @books.each do |book| %>
+<br>
+<ul>
+  <li><%= image_tag(book.image) %></li>
+  <li>Title:&nbsp&nbsp<%= link_to book.title, book %></li>
+  <!-- <li>Release Date:&nbsp&nbsp<%#= book.release.strftime('%B %d, %Y') %></li>
+  <li>Description:&nbsp&nbsp<%#= book.description %></li> -->
+  <li>ISBN:&nbsp&nbsp<%= book.isbn %></li>
+</ul>
+<% end %>
+

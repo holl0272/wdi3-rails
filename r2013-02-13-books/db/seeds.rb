@@ -1,0 +1,10 @@
+Author.delete_all
+Book.delete_all
+
+Author.create(:name => 'Agatha Christie', :dob => '1890/09/15', :birthplace => 'England', :genre => 'Crime', :image => 'http://www.famousauthors.org/famous-authors/agatha-christie.jpg')
+Author.create(:name => 'Alan Moore', :dob => '1953/11/18', :birthplace => 'England', :genre => 'Graphic Novels', :image => 'http://www.famousauthors.org/famous-authors/alan-moore.jpg')
+Author.create(:name => 'Anne Rice', :dob => '1951/10/14', :birthplace => 'Louisiana', :genre => 'Gothic', :image => 'http://www.famousauthors.org/famous-authors/anne-rice.jpg')
+
+Book.create(:title => 'The Murder of Roger Ackroyd', :release => '2011/02/01', :description => 'Roger Ackroyd knew too much. He knew that the woman he loved had poisoned her brutal first husband He suspected also that someone had been blackmailing her Then tragically came the news that she had taken her own life with a drug overdose.', :isbn => '0062073567', :image => 'http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&Format=_SL160_&ASIN=0062073567&MarketPlace=US&ID=AsinImage&WS=1&tag=famauthors-20&ServiceVersion=20070822')
+Book.create(:title => 'Neonomicon', :release => '2011/11/08', :description => 'NEONOMICON collects Alan Moores 2010 comic book series for the first time in its entirety including his original story THE COURTYARD which chronicled Aldo Saxs tragic encounter with the somewhat mortal agents of the Old Ones', :isbn => '1592911315', :image => 'http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&Format=_SL160_&ASIN=1592911315&MarketPlace=US&ID=AsinImage&WS=1&tag=famauthors-20&ServiceVersion=20070822')
+Book.create(:title => 'The Vampire Lestat', :release => '1985/09/15', :description => 'As the novel opens Lestat having risen from the earth after a fiftyfive years sleep and infatuated with the modern world presents himself in all his vampire brilliance as a rock star a superstar a seducer of millions', :isbn => '0394534433', :image => 'http://ws.assoc-amazon.com/widgets/q?_encoding=UTF8&Format=_SL160_&ASIN=0394534433&MarketPlace=US&ID=AsinImage&WS=1&tag=famauthors-20&ServiceVersion=20070822')

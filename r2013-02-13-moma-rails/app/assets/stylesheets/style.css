@@ -1,0 +1,68 @@
+@import url(http://fonts.googleapis.com/css?family=Miss+Fajardose);
+@import url(http://fonts.googleapis.com/css?family=Diplomata+SC);
+@import url(http://fonts.googleapis.com/css?family=Quintessential);
+
+body {
+  background: url('/assets/subtle_grunge.png');
+  font-family: 'Quintessential', cursive;
+  list-style: none;
+}
+
+body form {
+  margin: 10px;
+  font-family: 'Quintessential', cursive;
+}
+
+
+img {
+  width:100px;
+  height: 150px;
+  border: 1px solid black;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+nav li {
+  margin-left: 0px;
+  display: inline;
+  padding: 25px 25px 25px 0;
+  font-size: 20px;
+  font-family: 'Diplomata SC', cursive;
+  text-decoration: none;
+}
+
+#nav li a {
+  text-decoration: none;
+}
+
+#nav li a:active {
+  color: yellow;
+}
+
+#nav li a:hover{
+  color: yellow;
+}
+
+#nav li a:visited{
+  color: black;
+}
+
+.container {
+  margin: 10px;
+}
+
+.show img {
+  width:300px;
+  height: 350px;
+}
+
+h2 {
+  margin: 0px;
+  font-size: 50px;
+  font-family: 'Miss Fajardose', cursive;
+}
+
+.container {
+  clear: both;
+  border-top: 2px solid blue;
+

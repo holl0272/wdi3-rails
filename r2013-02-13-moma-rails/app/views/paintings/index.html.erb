@@ -1,0 +1,15 @@
+<ol>
+  <% @paintings.each do |painting| %>
+  <li>
+    <ul>
+      <li style="list-style: none;"><h2><%= link_to(painting.title, painting) %></h2></li>
+      <%= image_tag(painting.image) %>
+      <li>Year:&nbsp&nbsp<%= painting.year %></li>
+      <li>Medium:&nbsp&nbsp<%= painting.medium %></li>
+      <li>Style:&nbsp&nbsp<%= painting.style %></li>
+    </ul>
+  </li>
+  <br>
+  <br>
+  <% end %>
+</ol>

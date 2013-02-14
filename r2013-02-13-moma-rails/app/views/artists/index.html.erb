@@ -1,0 +1,15 @@
+<ol>
+  <% @artists.each do |artist| %>
+  <li>
+    <ul>
+      <li style="list-style: none;"><h2><%= link_to(artist.name, artist) %></h2></li>
+      <%= image_tag(artist.image) %>
+      <li>Nationality:&nbsp&nbsp<%= artist.nationality %></li>
+      <li>Date of birth:&nbsp&nbsp<%= artist.dob %></li>
+      <li>Time Period:&nbsp&nbsp<%= artist.period %></li>
+    </ul>
+  </li>
+  <br>
+  <br>
+  <% end %>
+</ol>
