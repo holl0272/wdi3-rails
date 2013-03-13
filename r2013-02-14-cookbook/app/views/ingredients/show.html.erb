@@ -1,10 +1,12 @@
 <ul>
-  <li><h1><%= link_to(@ingredient.name, @ingredient) %></h1></li>
+  <li><h1><%= @ingredient.name %></h1></li>
   <li><%= image_tag(@ingredient.image) %></li>
   <li><%= @ingredient.measurment %></li>
   <li><%= @ingredient.cost %></li>
+  <li>Created on: <%= @ingredient.created_at.strftime('%B %d, %Y at %l:%M%P') %></li>
+  <li>Updated on: <%= @ingredient.updated_at.strftime('%B %d, %Y at %l:%M%P') %></li>
 </ul>
 <br>
 <br>
-  <%= link_to 'edit', edit_ingredient_path(@ingredient) %>
-  <%= link_to 'delete', @ingredient, :method => :delete, :confirm => 'Are you sure you want to DELETE this INGREDIENT?' %>
+<%= link_to 'edit', edit_ingredient_path(@ingredient) %>
+<%= link_to 'delete', @ingredient, :method => :delete, :confirm => 'Are you sure you want to DELETE this INGREDIENT?' %>

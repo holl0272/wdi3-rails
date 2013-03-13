@@ -1,0 +1,27 @@
+.row
+  .five.columns
+    = render(:partial => 'shared/errors', :locals => {:object => @song})
+    = form_for @song do |f|
+      = f.label :name
+      = f.text_field :name, :autofocus => true
+      = f.label :image
+      = f.text_field :image
+      = f.label 'File Name'
+      = f.text_field :filename
+      = f.label :price
+      = f.text_field :price, :value => number_to_currency(f.object.price, :precision => 2)
+      = f.select :artist_id, Artist.all.map{|artist| [artist.name, artist.id]}, :prompt => "Select an Artist"
+      %br
+      %br
+      = f.select :album_id, Album.all.map{|album| [album.name, album.id]}, :prompt => "Select an Album"
+      %br
+      %br
+      %strong Genres:
+      %p
+      -Genre.find(:all, :order => 'LOWER(name)').each do |genre|
+        %span= check_box_tag "song[genre_ids][]", genre.id, genre.in?(@song.genres.to_a)
+        %span= genre.name
+        %p
+      = f.submit nil, :class => 'button radius'
+  .seven.columns
+

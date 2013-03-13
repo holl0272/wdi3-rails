@@ -1,0 +1,11 @@
+#table
+  %span= link_to('New Genre', new_genre_path, :class => 'button radius success tiny') if is_admin
+  %br
+  %br
+  %table
+    - @genres.each do |genre|
+      %tr
+        %td= link_to(genre.name, genre_path(genre))
+        -if is_admin
+          %td= link_to('Edit', edit_genre_path(genre), :class => 'button radius standard tiny')
+          %td= link_to('Delete', genre, :method => :delete, :class => 'button radius alert tiny')

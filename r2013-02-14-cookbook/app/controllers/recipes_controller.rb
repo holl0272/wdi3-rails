@@ -13,16 +13,16 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
   def edit
-        @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:id])
   end
   def update
-        recipe = Recipe.find(params[:id])
-        recipe.update_attributes(params[:recipe])
-        redirect_to(recipe)
+    recipe = Recipe.find(params[:id])
+    recipe.update_attributes(params[:recipe])
+    redirect_to(recipe)
   end
   def destroy
    recipe = Recipe.find(params[:id])
    recipe.delete
    redirect_to(recipes_path)
-  end
+ end
 end

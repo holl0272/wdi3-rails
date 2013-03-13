@@ -1,0 +1,25 @@
+#table
+  %h2= @album.name
+  %div= image_tag(@album.image)
+  -if @auth.present?
+    %div= button_to('Purchase Album', purchase_album_path, :method => :get, :class => 'button radius success tiny')
+  -if @album.artists != nil
+    %div
+      %h3 Artist
+      %table
+        -@album.artists.each do |artist|
+          %tr
+            %td= link_to(artist.name, artist_path(artist))
+            %td= image_tag(artist.image)
+            -if is_admin
+              %td= link_to('Edit', edit_artist_path(artist), :class => 'button radius standard tiny')
+              %td= link_to('Delete', artist, :method => :delete, :class => 'button radius alert tiny')
+      %h3 Songs
+      %table
+        - @album.songs.each do |song|
+          %tr
+            %td= link_to(song.name, song)
+            -if song.in?(@auth.songs)
+              %td= button_to('You own this song', mixtape_path, :method => :get, :class => 'button radius standard tiny')
+            -else
+              %td= button_to('Purchase Song', song_path(song), :method => :get, :class => 'button radius success tiny')

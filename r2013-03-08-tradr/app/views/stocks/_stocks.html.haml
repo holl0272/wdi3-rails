@@ -1,0 +1,13 @@
+%tr
+  %th Symbol
+  %th Quantity
+  %th Value
+  %th ID
+  %th Chart
+  - @stocks.each do |stock|
+    %tr
+      %td= stock.symbol
+      %td= stock.quantity
+      %td= stock.value
+      %td= stock.id
+      %td= link_to('Chart', '#', :class => 'button radius tiny chart_btn')

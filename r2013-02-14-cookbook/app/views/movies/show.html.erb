@@ -1,0 +1,16 @@
+
+<button class="btn btn-warning" type="button"><%= link_to 'add', edit_movie_path %></button>
+<img id="poster" src='<%= @hash['Poster'] %>'>
+
+<ul id="movielist">
+      <li><a style="text-decoration: none;" target='_blank' href='https://www.google.com/search?q=<%= @hash['Title'] %>'><%= @hash['Title'] %></a></li>
+      <li><%= @hash['Year'] %></li>
+      <li><%= @hash['Rated'] %></li>
+      <li><%= @hash['Released'] %></li>
+      <li><%= @hash['Runtime'] %></li>
+      <li><%= @hash['Genre'] %></li>
+      <li><%= @hash['Director'] %></li>
+      <li><%= @hash['Writer'] %></li>
+      <li><%= @hash['Actors'] %></li>
+    </ul>
+<h2 id="plot">Plot:</h2><h2><%= @hash['Plot'] %></h2>

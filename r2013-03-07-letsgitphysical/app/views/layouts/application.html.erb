@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>R20130307Letsgitphysical</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%- csrf_meta_tags %>
+</head>
+
+<body>
+
+  <!-- Header and Nav -->
+  <%= render :partial => 'layouts/nav' %>
+  <!-- End Header and Nav -->
+
+  <!-- Header and Nav -->
+  <%= render :partial => 'layouts/body' %>
+  <!-- End Header and Nav -->
+
+  <!-- Footer -->
+  <%= render :partial => 'layouts/footer' %>
+  <!-- End Footer -->
+
+<script>
+  $(document).foundation();
+</script>
+
+</body>
+
+</html>

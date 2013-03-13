@@ -1,0 +1,27 @@
+#table
+{
+  img
+  {
+    width: 100px;
+    height: 100px;
+  }
+
+tr td
+  {
+  color: white;
+  }
+
+th
+  {
+  color: white;
+  }
+
+  tr:nth-child(odd)
+  {
+    background-color: #25303D;
+  }
+    tr:nth-child(even)
+  {
+    background-color: #4D6078;
+  }
+}

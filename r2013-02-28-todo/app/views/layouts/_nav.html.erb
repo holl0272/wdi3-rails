@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="two columns">
+    <div id="logo">
+    <div id="logo">TaskMaster</div>
+  </div>
+  </div>
+  <div class="ten columns">
+    <ul class="nav-bar right">
+          <li class="active"><%= link_to('Home', root_path) %></li>
+          <li><%= link_to('Create User', new_user_path) %></li>
+          <li><%= link_to('List Users', users_path) %></li>
+          <li><%= link_to('Priorities', priorities_path) %></li>
+          <li><%= link_to('Tasks', tasks_path) %></li>
+
+          <%== intellinav %>
+
+    </ul>
+  </div>
+</div>

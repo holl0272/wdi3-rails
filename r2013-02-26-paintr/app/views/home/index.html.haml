@@ -1,0 +1,26 @@
+%h1 Paintr
+
+#selected
+.clear
+=text_field_tag 'color', nil, :autofocus => true
+=button_tag 'Add Color', :id => 'add_color'
+=button_tag 'Clear', :id => 'clear_color'
+=text_field_tag 'image', nil, :autofocus => true
+=button_tag 'Add Image', :id => 'add_image'
+=button_tag 'Clear Image', :id => 'clear_image'
+#colors
+.clear
+#images
+.clear
+.palet
+  #canvas
+
+/ #selected.box
+/ .clear
+/ =text_field_tag 'color', nil, :autofocus => true
+/ =button_tag 'Add Color', :id => 'add_color'
+/ =button_tag 'Clear', :id => 'clear_color'
+/ #colors
+/ .clear
+/ .palet
+/   #canvas

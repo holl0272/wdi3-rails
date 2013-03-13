@@ -1,6 +1,7 @@
 <%= form_for @recipe do |f| %>
-<%= f.label :book_id, "Select :  " %>
-<%= f.select :book_id, Book.all.map{|book| [book.title, book.id]}, :include_blank => true, :prompt => "Book's Name" %>
+  <%= f.label :book_id, "Select :  " %>
+  <%= f.select :book_id, Book.all.map{|book| [book.title, book.id]}, :include_blank => true, :prompt => "Book's Name" %>
+
 <br>
 <%= f.text_field :name, :autofocus => true %>
 <%= f.label :name, "Name" %>

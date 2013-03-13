@@ -12,8 +12,11 @@
 <%= f.label :image, "Image URL" %>
 <br>
 <% Recipe.order(:name).each do |recipe| %>
-<span><%= recipe.name %></span>
+<%= recipe.name %>
 <%= check_box_tag 'book[recipe_ids][]', recipe.id, recipe.in?(@book.recipes) %>
+<br>
+<%= image_tag(recipe.image) %>
+<br>
 <% end %>
 <br>
 <%= f.submit :class => 'btn btn-success' %>

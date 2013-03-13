@@ -1,0 +1,6 @@
+%h2 User List
+%table
+  - @users.each do |user|
+    %tr
+      %td= user.name
+      %td= link_to(user.email)

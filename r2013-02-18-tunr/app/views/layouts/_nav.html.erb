@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="two columns">
+    <div id="logo">
+    <h1><%= image_tag('logo3.jpg') %></h1>
+  </div>
+  </div>
+  <div class="ten columns">
+    <ul class="nav-bar right">
+      <li><%= link_to('Home', root_path) %></li>
+
+      <% if @auth.present? && !@auth.is_admin? %>
+      <li class="has-flyout">
+        <a href="#">Mixtapes</a>
+        <a href="#" class="flyout-toggle"><span> </span></a>
+        <ul class="flyout">
+        <%== mixtape_nav %>
+      </li></ul>
+      <% end %>
+
+      <% if @auth.present? && @auth.albums.nil? %>
+      <li class="has-flyout">
+        <a href="#">Albums</a>
+        <a href="#" class="flyout-toggle"><span> </span></a>
+        <ul class="flyout">
+        <%== album_nav %>
+      </li></ul>
+      <% end %>
+
+      <li class="has-flyout">
+        <a href="#">Browse Music</a>
+        <a href="#" class="flyout-toggle"><span> </span></a>
+        <ul class="flyout">
+          <li><%= link_to('Artists', artists_path) %></li>
+          <li><%= link_to('Albums', albums_path) %></li>
+          <li><%= link_to('Genres', genres_path) %></li>
+          <li><%= link_to('Songs', songs_path) %></li>
+        </ul>
+      </li>
+      <%== intellinav %>
+    </ul>
+  </div>
+</div>

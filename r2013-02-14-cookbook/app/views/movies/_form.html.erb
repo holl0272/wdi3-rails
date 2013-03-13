@@ -1,0 +1,14 @@
+<% form_for @book |f|%>
+<%= f.text_field %>
+<%= f.label :title, "Title" %>
+<br>
+<%= f.text_field %>
+<%= f.label :cuisine, "Cuisine" %>
+<br>
+<%= f.text_field %>
+<%= f.label :chef, "Chef" %>
+<br>
+<%= f.text_field %>
+<%= f.label :image, "Image URL" %>
+<br>
+<%= f.submit :class => 'btn btn-success' %>

@@ -1,0 +1,22 @@
+.row
+  .five.columns
+    = render(:partial => 'shared/errors', :locals => {:object => @album})
+    = form_for @album do |f|
+      = f.label :name
+      = f.text_field :name, :autofocus => true
+      = f.label :image
+      = f.text_field :image
+      %strong Songs:
+      %p
+      -Song.find(:all, :order => 'LOWER(name)').each  do |song|
+        %span= check_box_tag "album[song_ids][]", song.id, song.in?(@album.songs.to_a)
+        %span= song.name
+        %p
+      %strong Artist:
+      %p
+      - Artist.all.each do |artist|
+        = artist.name
+        = check_box_tag 'album[artist_ids][]',artist.id, artist.in?(@album.artists)
+        %p
+      = f.submit nil, :class => 'button radius'
+  .seven.columns

@@ -1,0 +1,19 @@
+#table
+  %span= link_to('New Songs', new_song_path, :class => 'button radius success tiny') if is_admin
+  %br
+  %br
+  %table
+    - @songs.each do |song|
+      -if song.name != nil
+        %tr
+          %td= link_to(song.name, song_path(song))
+          %td= image_tag(song.image)
+          -if is_admin
+            %td= link_to('Edit', edit_song_path(song), :class => 'button radius standard tiny')
+            %td= link_to('Delete', song, :method => :delete, :class => 'button radius alert tiny')
+          %td= audio_tag(song.filename, :controls => true) if !@auth.nil?
+          / %td
+          /   -if @auth.mixtapes.map(&:songs).flatten.include?(song)
+          /     =link_to('Song Purchased!', nil, :class => 'button disabled tiny alert')
+          /   - else
+          /     =link_to('Purchase Song', purchase_song_path(song.id), :method => 'get', :confirm => 'Are you sure?', :class => 'button radius

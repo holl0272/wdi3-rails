@@ -1,0 +1,11 @@
+.row
+  .large-3.columns
+    = form_for @user, :remote => true do |f|
+      = f.label 'Email'
+      = f.text_field :email
+      = f.label :password
+      = f.password_field :password
+      = f.label :password_confirmation, 'Password Confirmation'
+      = f.password_field :password_confirmation
+      = f.submit 'Create Your Account', :class => 'button success radius'
+  .large-9.columns

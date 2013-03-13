@@ -1,22 +1,22 @@
 <ul>
-  <li><h1><%= link_to(@book.title, @book) %></h1></li>
+  <li><h1><%= @book.title %></h1></li>
   <li><%= image_tag(@book.image) %></li>
   <li>Chef: <%= @book.chef %></li>
   <li>Cuisine: <%= @book.cuisine %></li>
+  <li>Created on: <%= @book.created_at.strftime('%B %d, %Y at %l:%M%P') %></li>
+  <li>Updated on: <%= @book.updated_at.strftime('%B %d, %Y at %l:%M%P') %></li>
 </ul>
 <br>
 <br>
 <button class="btn btn-warning" type="button"><%= link_to 'edit', edit_book_path(@book) %></button>
 <%= link_to 'delete', @book, :class => 'btn btn-danger', :method => :delete, :confirm => 'Are you sure you want to DELETE this BOOK?' %>
 
-
-
-
 <br>
 
+<ul>
 <% @book.recipes.each do |recipe| %>
-  <%= recipe.name %>
-  <%= image_tag(recipe.image) %>
+ <li><h1><%= link_to(recipe.name, recipe) %></h1></li>
+  <li><%= image_tag(recipe.image) %></li>
 
-
+</ul>
 <% end %>

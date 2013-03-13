@@ -1,0 +1,40 @@
+%h2= @song.name
+%div= image_tag(@song.image)
+%br
+%div= audio_tag(@song.filename, :controls => true) if !@auth.nil?
+%br
+%strong Album Name:
+-if @song.album != nil
+  = link_to(@song.album.name, album_path(@song.album.id))
+%br
+%br
+%strong Artist Name:
+-if @song.artist != nil
+  = link_to(@song.artist.name, artist_path(@song.artist.id))
+%br
+%br
+%strong Genres:
+%ul
+-if @song.genres != nil
+  -@song.genres.each do |genre|
+    %li= link_to(genre.name, genre_path(genre))
+%br
+-if @auth.present?
+  %strong Purchase This Song:
+  %br
+  %br
+  -if @auth.mixtapes.empty?
+    .row
+      .six.columns
+        .alert-box
+          You must create a Mixtape before purchasing this song
+  -else
+    -if @song.price > @auth.balance
+      .row
+        .three.columns
+          .alert-box.alert
+            Insufficient Funds
+    -else
+      %span= button_to(number_to_currency(@song.price), purchase_song_path, :method => :get, :confirm => "Are you sure you want to buy this song?", :class => 'button radius success')
+-else
+  %br

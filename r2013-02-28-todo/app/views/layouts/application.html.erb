@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>R20130228Todo</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE']}&sensor=false" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<!-- Header and Nav -->
+  <%= render :partial => 'layouts/nav' %>
+<!-- End Header and Nav -->
+
+  <div class="row">
+    <div class="twelve columns">
+      <%= yield %>
+    </div>
+  </div>
+
+<!-- Footer -->
+<%= render :partial => 'layouts/footer' %>
+<!-- End Footer -->
+
+</body>
+</html>

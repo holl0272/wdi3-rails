@@ -1,0 +1,13 @@
+%h2 Purchase Confirmation
+%h3= @song.name
+%h5
+  %span Performed by:
+  %span= @song.artist.name
+%p
+  %strong Please select a Mixtape
+= form_tag buy_song_path(@song)
+-@auth.mixtapes.order(:name).each do |mixtape|
+  =check_box_tag('song[mixtape_ids][]', mixtape.id)
+  =mixtape.name
+  %p
+=button_to('Purchase', buy_song_path, :class => 'button radius')

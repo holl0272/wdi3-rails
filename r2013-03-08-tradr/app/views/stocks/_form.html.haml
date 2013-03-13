@@ -1,0 +1,10 @@
+.row
+  .large-3.columns
+    = form_for @stock, :remote => true do |f|
+      = f.label 'Symbol'
+      = f.text_field :symbol, :autofocus => true
+      = f.label 'Quantity'
+      = f.text_field :quantity
+      = f.submit 'Buy', :class => 'button success tiny radius'
+      = link_to('Cancel', '#', :id=>'cancel_new_stock', :class => 'button radius tiny alert')
+  .large-9.columns

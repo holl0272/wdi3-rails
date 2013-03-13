@@ -1,0 +1,12 @@
+#table
+  %span= link_to('New Artist', new_artist_path, :class => 'button radius success tiny') if is_admin
+  %br
+  %br
+  %table
+    - @artists.each do |artist|
+      %tr
+        %td= link_to(artist.name, artist_path(artist))
+        %td= image_tag(artist.image)
+        -if is_admin
+          %td= link_to('Edit', edit_artist_path(artist), :class => 'button radius standard tiny')
+          %td= link_to('Delete', artist, :method => :delete, :class => 'button radius alert tiny')

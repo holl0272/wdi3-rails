@@ -5,16 +5,20 @@
   <li><%= @recipe.cooktime %></li>
   <li><%= @recipe.servingsize %></li>
   <li><%= @recipe.instructions %></li>
+  <li>Created on: <%= @recipe.created_at.strftime('%B %d, %Y at %l:%M%P') %></li>
+  <li>Updated on: <%= @recipe.updated_at.strftime('%B %d, %Y at %l:%M%P') %></li>
 </ul>
 <br>
 <br>
-  <%= link_to 'edit', edit_recipe_path(@recipe) %>
-  <%= link_to 'delete', @recipe, :method => :delete, :confirm => 'Are you sure you want to DELETE this RECIPE?' %>
+<%= link_to 'edit', edit_recipe_path(@recipe) %>
+<%= link_to 'delete', @recipe, :method => :delete, :confirm => 'Are you sure you want to DELETE this RECIPE?' %>
 
-    <br>
+<br>
 
+<ul>
+<% @recipe.ingredients.each do |ingredient| %>
+ <li><h1><%= link_to(ingredient.name, ingredient) %></h1></li>
+<li><%= image_tag(ingredient.image) %></li>
+<% end %>
+</ul>
 
-  <% @recipe.ingredients.each do |ingredient| %>
-    <%= ingredient.name %>
-    <%= image_tag(ingredient.image) %>
-  <% end %>

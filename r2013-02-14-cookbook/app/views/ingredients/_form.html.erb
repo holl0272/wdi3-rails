@@ -1,7 +1,6 @@
 <%= form_for @ingredient do |f| %>
-
-<%#= f.label :recipe_id, "Select :  " %>
-<%#= f.select :recipe_id, Recipe.all.map{|recipe| [recipe.name, recipe.id]}, :include_blank => true, :prompt => "Recipe's Name" %>
+  <%= f.label :recipe_id %>
+  <%= f.select :recipe_ids, Recipe.all.map{|recipe| [recipe.name, recipe.id]}, :include_blank => true, :prompt => "Pick Recipe!" %>
 
 <br>
 <%= f.text_field :name, :autofocus => true %>

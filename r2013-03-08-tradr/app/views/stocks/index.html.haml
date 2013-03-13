@@ -1,0 +1,8 @@
+%h3 Stock List
+
+#quote_btn= link_to('Quote', new_stock_path, :remote => true, :class => 'button radius')
+#new_stock
+%table#stocks
+  = render(:partial => 'stocks')
+
+#chart

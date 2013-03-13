@@ -1,0 +1,11 @@
+%tr
+  %th E-mail
+  %th Cash
+  %th Positions
+  %th Total
+  - @users.each do |user|
+    %tr
+      %td= user.email
+      %td= number_to_currency(user.cash_balance)
+      %td= number_to_currency(user.stock_balance)
+      %td= number_to_currency(user.cash_balance + user.stock_balance)

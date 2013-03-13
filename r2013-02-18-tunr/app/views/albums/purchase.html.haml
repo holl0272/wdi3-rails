@@ -1,0 +1,5 @@
+%h2 Purchase Confirmation
+%h3= @album.name
+%p
+= form_tag buy_album_path(@album)
+=button_to('Purchase', buy_album_path, :class => 'button radius')
