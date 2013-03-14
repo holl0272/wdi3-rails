@@ -1,12 +1,15 @@
-= form_for @user, :url => subscribers_path, :remote => true do |f|
-  = f.label :username
-  = f.text_field :username, :autofocus => true
-  = f.label :email
-  = f.email_field :email
-  = f.label :password
-  = f.password_field :password
-  = f.label :password_confirmation
-  = f.password_field :password_confirmation
-  = button_to_function('Cancel', 'cancel_subscriber_form()')
-  = f.submit
+%fieldset.forms
+  %legend Registration
+  = form_for @user, :url => subscribers_path, :remote => true do |f|
+    = f.label :username
+    = f.text_field :username, :autofocus => true
+    = f.label :email
+    = f.email_field :email
+    = f.label :password
+    = f.password_field :password
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+    = f.submit(:class => 'button radius tiny success')
+    = button_to_function('Cancel', 'cancel_subscriber_form()', :class => 'button radius tiny alert')
+
 
