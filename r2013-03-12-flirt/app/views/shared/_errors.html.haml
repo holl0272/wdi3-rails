@@ -1,0 +1,7 @@
+- if object.errors.any?
+  %p
+    %em= "Fix the following #{pluralize(object.errors.count, 'error')}"
+  %ol
+    - object.errors.full_messages.each do |msg|
+      %li
+        .label.alert.round= msg

@@ -30,6 +30,15 @@ describe 'subscribers' do
       page.should have_text('You have successfully created an account!')
       expect(Subscriber.first.user.username).to eq 'Bob'
     end
+
+    it 'does not creates a new subscriber due to failing validation', :js => true do
+      visit root_path
+      click_link('Register')
+      click_button('Create User')
+      page.should have_button('Create User')
+      page.should have_css('#form ol li', :count => 3)
+      page.should have_text('Fix the following 3 errors')
+    end
   end
 
   describe 'JS cancel_subscriber_form()' do
