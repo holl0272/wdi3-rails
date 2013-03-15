@@ -18,9 +18,11 @@ function show_or_hide_login_register_links()
 function cancel_subscriber_form()
 {
   $('#form').empty();
+  $('#anonymous').show();
 }
 
 function cancel_login_form()
 {
   $('#form').empty();
+  $('#anonymous').show();
 }
