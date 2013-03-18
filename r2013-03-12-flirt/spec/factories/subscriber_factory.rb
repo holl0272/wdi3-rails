@@ -24,14 +24,21 @@
 #  expires         :date
 #
 
-class Subscriber < ActiveRecord::Base
-  attr_accessible :tagline, :bio, :preferences, :bodytype, :location, :status, :ethnicity, :gender, :age, :occupation, :interests, :political, :religious, :education, :income
-  has_one :user, :as => :userable
-  belongs_to :subscription
-  validates :tagline, :bio, :gender, :presence => true
-  validates :age, :numericality => {:greater_than => 17}
+FactoryGirl.define do
+  factory :subscriber_no_subscription, class: Subscriber do
+    tagline 'Walk in the park'
+    bio     'I enjoy walks in the park'
+    gender  'Female'
+    age     18
+    user    {FactoryGirl.create(:regular_user)}
+  end
 
-  def has_subscription?
-    self.subscription.present?
+  factory :subscriber_with_subscription, class: Subscriber do
+    tagline       'Surfer gal'
+    bio           'I love swimming'
+    gender        'Female'
+    age           19
+    user          {FactoryGirl.create(:regular_user)}
+    subscription  {FactoryGirl.create(:subscription)}
   end
 end

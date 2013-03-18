@@ -10,25 +10,14 @@
   <%= javascript_include_tag "application" %>
   <%- csrf_meta_tags %>
 </head>
-
 <body>
-
-  <!-- Header and Nav -->
-  <%= render :partial => 'layouts/nav' %>
-  <!-- End Header and Nav -->
-
-  <!-- Header and Nav -->
-  <%= render :partial => 'layouts/body' %>
-  <!-- End Header and Nav -->
-
-  <!-- Footer -->
-  <%= render :partial => 'layouts/footer' %>
-  <!-- End Footer -->
+  <div id='nav'><%= render :partial => 'layouts/nav' %></div>
+  <div id='body'><%= render :partial => 'layouts/body' %></div>
+  <div id='footer'><%= render :partial => 'layouts/footer' %></div>
 
   <script>
   $(document).foundation();
   </script>
-
+  <%= javascript_include_tag params[:controller] %>
 </body>
-
 </html>
