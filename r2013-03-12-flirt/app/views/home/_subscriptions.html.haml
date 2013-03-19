@@ -1,3 +1,8 @@
 - if @auth.present? && @auth.sub.present? && !@auth.sub.has_subscription?
-  - Subscription.all.each do |subscription|
-    = button_to(subscription.plan, purchase_subscribers_path(:plan => subscription.plan), :remote => true, :class => 'button radius')
+  %fieldset
+    %legend Subscriptions
+    / %table
+    /   %tr
+    - Subscription.all.each do |subscription|
+      / %td
+      .float= button_to(subscription.plan, purchase_subscribers_path(:plan => subscription.plan), :remote => true, :id => 'subscription_btns', :class => 'button radius secondary')

@@ -67,5 +67,14 @@ describe Subscriber do
         expect(subscriber.has_subscription?).to be_false
       end
     end
+
+    describe '#purchase_plan' do
+      it 'purchases a subscription' do
+        subscription = FactoryGirl.create(:subscription)
+        subscriber.purchase_plan(subscription.plan)
+        expect(subscriber.subscription).to eq subscription
+        expect(subscriber.expires).to eq (Date.current + subscription.duration.month)
+      end
+    end
   end
 end

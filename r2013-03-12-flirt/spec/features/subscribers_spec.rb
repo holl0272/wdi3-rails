@@ -70,6 +70,16 @@ describe 'Subscribers' do
     end
   end
 
+  describe 'POST /subscribers/purchase' do
+    it 'purchases a subscription for a subscriber', :js => true do
+      subscriber = FactoryGirl.create(:subscriber_no_subscription)
+      login_to_system(subscriber.user)
+      click_button('Basic')
+      page.should_not have_button('Basic')
+      page.should have_link('Profile')
+    end
+  end
+
   describe 'JS cancel_subscriber_form()' do
     it 'removes the subscriber form', :js => true do
       visit root_path

@@ -50,8 +50,8 @@ describe 'Session' do
     it 'logs the user off the system', :js => true do
       subscriber = FactoryGirl.create(:subscriber_no_subscription)
       login_to_system(subscriber.user)
-      click_link(subscriber.user.username)
-      expect(page.has_link?(subscriber.user.username)).to be true
+      click_link(subscriber.user.username + ' | Logout')
+      expect(page.has_link?(subscriber.user.username + ' | Logout')).to be false
       page.should have_link('Register')
       page.should_not have_button('Free')
       visit root_path

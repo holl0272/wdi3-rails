@@ -1,4 +1,6 @@
 class SubscribersController < ApplicationController
+  before_filter :check_subscriber, :except => [:new, :create]
+
   def new
     @user = User.new
   end
@@ -12,6 +14,11 @@ class SubscribersController < ApplicationController
   end
 
   def purchase
+    @subscriber.purchase_plan(params[:plan])
+  end
 
+  private
+  def check_subscriber
+    render :nothing => true if @subscriber.nil?
   end
 end

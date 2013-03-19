@@ -34,4 +34,13 @@ class Subscriber < ActiveRecord::Base
   def has_subscription?
     self.subscription.present?
   end
+
+  def purchase_plan(name)
+    plan = Subscription.where(:plan => name).first
+    if plan.present?
+      self.subscription = plan
+      self.expires = Date.current + plan.duration.month
+      self.save
+    end
+  end
 end
