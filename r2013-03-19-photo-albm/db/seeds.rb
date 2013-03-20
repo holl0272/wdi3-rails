@@ -1,0 +1,1 @@
+Album.delete_all
