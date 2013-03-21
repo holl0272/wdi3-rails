@@ -1,7 +1,9 @@
 class Home
   @document_ready: ->
     $('#form').on('click', 'a[data-clear-form]', Home.clear_form)
-    $('#slider').slider({ min: 0, max: 50, step: 1, slide: Home.sliding })
+    photos = $('.photo').length
+    $('#slider').slider({ min: 0, max: photos, step: 1, slide: Home.sliding })
+    $('#slider').slider('option', 'value', photos)
 
   @clear_form: (e) ->
     e.preventDefault()
