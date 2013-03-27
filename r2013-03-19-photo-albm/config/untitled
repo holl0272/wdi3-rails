@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: VirginGalactic
+  pool: 5
+  host: localhost
+  username: ericholland
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: VirginGalactic
+  pool: 5
+  host: localhost
+  username: ericholland
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: VirginGalactic
+  pool: 5
+  host: localhost
+  username: ericholland
+  password:

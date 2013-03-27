@@ -1,0 +1,12 @@
+.row
+  .large-1.columns
+    = form_tag scrape_path, :remote => true do
+      = text_field_tag 'pages', nil, :autofocus => true
+.row
+  .large-2.columns
+    = label_tag 'Number of Pages'
+    = submit_tag 'Scrape', :id => 'submit_btn', :class => 'button success radius'
+  .large-9.columns
+
+#stories
+  = render :partial => 'shared/stories'
