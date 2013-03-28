@@ -1,6 +1,7 @@
 class Home
   @document_ready: ->
     $('#play_btn').click(Home.get_number)
+    $('#reset_btn').click(Home.reset)
 
   @get_number: ->
     num = $('#ring_count').val()
@@ -18,4 +19,9 @@ class Home
       $(x).addClass('disk')
       $('#call_1 .rings').append(x)
       i++
+
+  @reset: ->
+    $('#call_1 .rings').empty()
+    $("input[type=text], textarea").val("")
+
 $(document).ready(Home.document_ready)

@@ -1,16 +1,9 @@
-body
-{
-  height: 100%;
-}
-
 .callbox
 {
   margin-left: 10px;
   float: left;
   height: 100%;
   width: 200px;
-  border: 2px solid red;
-  position: relative;
   text-align: center;
 }
 
@@ -19,18 +12,9 @@ body
   height: 20px;
   width: 175px;
   background-color: brown;
-  position: absolute;
+  border-radius: 5px;
   bottom: 25px;
   margin-left: 12px;
-}
-
-.post
-{
-  height: 250px;
-  width: 15px;
-  background-color: brown;
-  margin: 0 auto;
-  margin-top: 25px;
 }
 
 #form
@@ -41,11 +25,10 @@ body
 .rings
 {
   height: 100%;
-  position: relative;
   width: 172px;
   margin-left: 12px;
-  border: 2px solid blue;
 }
+
 .disk
 {
   margin-left: auto;
