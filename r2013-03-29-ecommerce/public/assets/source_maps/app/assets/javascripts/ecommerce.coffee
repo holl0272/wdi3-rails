@@ -2,7 +2,7 @@ window.app =
   map: null
   markers: []
   ready: ->
-    $('body').on('keydown', '#search', app.filter_products)
+    $('body').on('keyup', '#search', app.filter_products)
   filter_products: (e) ->
     query = $('#search').val()
     settings =
@@ -25,4 +25,4 @@ window.app =
     marker.setMap(null) for marker in app.markers
     app.markers = []
 
-$('#document').ready(app.ready)
+$(document).ready(app.ready)
