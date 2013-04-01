@@ -43,7 +43,10 @@ class Home
       $('#call_1').removeClass('background-yellow')
       $('#call_2').removeClass('background-yellow')
       $('#call_3').removeClass('background-yellow')
-
+      if $('#call_2').children().first().children().length == Home.ring_match
+        $('#call_2').addClass('background-blue')
+      if $('#call_3').children().first().children().length == Home.ring_match
+        $('#call_3').addClass('background-blue')
 
   @get_number: ->
     num = $('#ring_count').val()
@@ -65,6 +68,9 @@ class Home
       $(x).attr('id',"disk_#{i}")
       $('#call_1 .rings').append(x)
       i++
+    Home.ring_match = $('#call_1').children().first().children().length
+    console.log(Home.ring_match)
+
 
   @reset: ->
     $('.callbox .rings').empty()
